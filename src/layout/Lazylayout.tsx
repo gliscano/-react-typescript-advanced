@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import Lazyload1 from '../lazyload/pages/Lazyload1';
 import Lazyload2 from '../lazyload/pages/Lazyload2';
 
@@ -20,6 +20,8 @@ const LazyLayout = () => {
             <Routes>
                 <Route path='lazy1' element={<Lazyload1 />} />
                 <Route path='lazy2' element={<Lazyload2 />} />
+
+                <Route path='*' element={<Navigate replace to="lazy1" />} />
             </Routes>
         </div>
     )

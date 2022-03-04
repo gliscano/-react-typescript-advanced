@@ -13,9 +13,6 @@ const LazyLayout = () => {
                 <li>
                     <NavLink to="lazy2">Lazy 2</NavLink>
                 </li>
-                <li>
-                    <NavLink to="lazy3">Lazy 3</NavLink>
-                </li>
             </ul>
             <Routes>
                 <Route path='lazy1' element={<Lazyload1 />} />

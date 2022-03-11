@@ -14,9 +14,9 @@ const LazyLayout = lazy(() => import(/* webpackChunkName: "LazyPage1"*/'../layou
 
 const routes:Route[] = [
     {
-        path: '/lazy1',
+        path: '/lazyload',
         Component: LazyLayout,
-        name: 'Lazy Page 1'
+        name: 'LazyLoading Nested'
     },
     {
         path: '/lazy2',

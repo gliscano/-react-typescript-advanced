@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+In this project you will find examples LazyLoad with router (v5 and v6), Components Patterns.
+
+Components Patterns
+branch: master
+
+LazyLoad v5
+Branch: feature/lazyload-nested-v5
+
+LazyLoad v6
+Branch: lazyload-nested-v6
+Branch: main-router-v6
+
 ## Available Scripts
 
 In the project directory, you can run:

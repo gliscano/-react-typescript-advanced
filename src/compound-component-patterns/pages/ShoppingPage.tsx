@@ -1,6 +1,12 @@
-import ProductCard, { ProductTitle } from '../components/product/ProductCard';
-import { ProductImage } from '../components/product/ProductCard';
+/* Components */
+import {
+  ProductCard,
+  ProductButtons,
+  ProductTitle,
+  ProductImage
+} from '../components/product/';
 
+// Data Mock
 const product = {
   id: '1',
   title: 'Coffee Mug - 001',
@@ -18,9 +24,18 @@ const ShoppingPage = () => {
           flexDirection: 'row'
         }}
       >
+        {/* Add Components as Props */}
+        <ProductCard product={ product }>
+          <ProductCard.Image />
+          <ProductCard.Title />
+          <ProductCard.Buttons /> 
+        </ProductCard>
+
+        {/* Add Components with imports */}
         <ProductCard product={ product }>
           <ProductImage />
-          <ProductTitle title={''} />
+          <ProductTitle title={'Cafeee'} />
+          <ProductButtons /> 
         </ProductCard>
       </div>
     </div>

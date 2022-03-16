@@ -5,6 +5,7 @@ import {
   ProductTitle,
   ProductImage
 } from '../components/product/';
+/* Styles */
 
 // Data Mock
 const product = {
@@ -32,10 +33,16 @@ const ShoppingPage = () => {
         </ProductCard>
 
         {/* Add Components with imports */}
-        <ProductCard product={ product }>
-          <ProductImage />
-          <ProductTitle title={'Cafeee'} />
-          <ProductButtons /> 
+        <ProductCard
+          product={ product }
+          className='bg-dark text-white'
+        >
+          <ProductImage className='custom-image' />
+          <ProductTitle
+            title={'Cafeee'}
+            className='text-white text-bold'
+          />
+          <ProductButtons className='custom-buttons' />
         </ProductCard>
       </div>
     </div>

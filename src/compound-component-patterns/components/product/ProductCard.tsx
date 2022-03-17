@@ -10,8 +10,7 @@ import '../../styles/custom-styles.css';
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 
-
-export const ProductCard = ({ children, product, className }: ProductCardProps) => {
+export const ProductCard = ({ children, product, className, style }: ProductCardProps) => {
   const { counter , increaseBy } = useProduct();
 
   return (
@@ -20,7 +19,10 @@ export const ProductCard = ({ children, product, className }: ProductCardProps) 
       increaseBy,
       product
     }}>
-      <div className={`${styles.productCard} ${className}`}>
+      <div
+        className={`${styles.productCard} ${className}`}
+        style={style}
+      >
         { children }
       </div>
     </Provider>

@@ -1,19 +1,20 @@
-import { ReactElement } from "react";
-
-export interface ProductCardProps {
-  product: Product;
-  children?: ReactElement | ReactElement[];
-  className?: string;
-}
+import { ReactElement, CSSProperties } from "react";
 
 export interface Product {
   id: string;
-  title: string;
   img?: string;
+  title: string;
+}
+
+export interface ProductCardProps {
+  children?: ReactElement | ReactElement[];
+  className?: string;
+  product: Product;
+  style?: CSSProperties
 }
 
 export interface ProductContextProps {
   counter: number;
-  increaseBy: ( value: number ) => void;
   product: Product;
+  increaseBy: ( value: number ) => void;
 }

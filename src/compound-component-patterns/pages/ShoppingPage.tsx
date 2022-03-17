@@ -26,10 +26,13 @@ const ShoppingPage = () => {
         }}
       >
         {/* Add Components as Props */}
-        <ProductCard product={ product }>
-          <ProductCard.Image />
-          <ProductCard.Title />
-          <ProductCard.Buttons /> 
+        <ProductCard
+          product={ product }
+          className='bg-dark text-white'
+        >
+          <ProductCard.Image className='custom-image'/>
+          <ProductCard.Title className='text-white text-bold'/>
+          <ProductCard.Buttons className='custom-buttons' /> 
         </ProductCard>
 
         {/* Add Components with imports */}
@@ -43,6 +46,28 @@ const ShoppingPage = () => {
             className='text-white text-bold'
           />
           <ProductButtons className='custom-buttons' />
+        </ProductCard>
+
+        {/* Add Components with imports and Styles as props */}
+        <ProductCard
+          product={ product }
+          style={{
+            backgroundColor: '#78D1F8'
+          }}
+        >
+          <ProductImage
+            style={{ boxShadow: '18px 10px 18px rgba(0,0,0,0.2)' }}
+          />
+          <ProductTitle
+            title={'Cafeee'}
+            style={{ fontWeight: 'bold' }}
+          />
+          <ProductButtons
+            style={{
+              display: 'flex',
+              justifyContent: 'end'
+            }}
+          />
         </ProductCard>
       </div>
     </div>

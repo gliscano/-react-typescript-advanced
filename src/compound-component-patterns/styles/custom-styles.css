@@ -11,15 +11,20 @@
 }
 
 .custom-image {
+    border-radius: 20px;
+    box-shadow: 18px 10px 18px rgba(0,0,0,0.2);
     padding: 10px;
     width: calc(100% - 20px);
-    border-radius: 20px;
-    box-shadow: 18px 10px 18px rgba(0,0,0,0.2)
 }
 
 .custom-buttons button,
 .custom-buttons div {
-    color: white;
     border-color: white;
+    color: white;
+}
 
+.shopping-card {
+    position: fixed;
+    right: 0;
+    top: 0;
 }

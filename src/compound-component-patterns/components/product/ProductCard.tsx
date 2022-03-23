@@ -16,10 +16,11 @@ interface ProductCardProps {
   product: Product;
   style?: CSSProperties;
   onChange?: (arg: onChangeArgs) => void;
+  value?: number;
 }
 
-export const ProductCard = ({ children, product, className, style, onChange }: ProductCardProps) => {
-  const { counter , increaseBy } = useProduct({ onChange, product });
+export const ProductCard = ({ children, product, className, style, onChange, value }: ProductCardProps) => {
+  const { counter , increaseBy } = useProduct({ onChange, product, value });
 
   return (
     <Provider value={{

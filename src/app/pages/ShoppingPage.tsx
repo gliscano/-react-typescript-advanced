@@ -4,7 +4,7 @@ import {
   ProductButtons,
   ProductTitle,
   ProductImage
-} from '../components/product/';
+} from '../components/product';
 /* Hooks */
 import useShoppingCart from '../hooks/useShoppingCart';
 /* Data Mock */
@@ -17,7 +17,7 @@ const ShoppingPage = () => {
 
   return (
     <div>
-      <h1> Shooping Store </h1>
+      <h3> Marketplace Demo </h3>
       <hr />
       <div
         style={{
@@ -54,15 +54,15 @@ const ShoppingPage = () => {
           ))
         }
       </div>
-      <div className='shopping-card'>
+      <div className='shopping-card-container'>
         { 
           Object.entries( shoppingCart ).map( ([key, product]) => (
             <ProductCard
               key={ key }
               product={ product }
               className='bg-dark text-white'
-              style={{ width: '15%' }}
               onChange={ onProductCountChange}
+              style={{ width: '80%' }}
               value={ product.count }
             >
               <ProductImage className='custom-image' />

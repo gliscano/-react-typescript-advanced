@@ -14,31 +14,35 @@ code {
     monospace;
 }
 
-
 .main-layout {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding: 1%;
 }
 
 nav {
   background-color: #363a45;
-  height: 100vh;
-  margin-right: 15px;
-  overflow-y: scroll;
-  text-align: center;
-  width: 250px;
+  text-align: left;
+  width: 100%;
 }
+
+nav img {
+  width: 5%;
+  background-size: contain;
+}
+
 nav ul {
   align-items: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: left;
   padding-left: 0;
+  margin-top: 0;
 }
 
 nav li {
   list-style: none;
-  margin-bottom: 10px;
+  padding: 0% 16px;
 }
 
 nav li a {

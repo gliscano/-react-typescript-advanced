@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { onChangeArgs, Product } from '../interfaces/index';
 /* Components */
 import {
   ProductCard,
@@ -7,45 +5,15 @@ import {
   ProductTitle,
   ProductImage
 } from '../components/product/';
+/* Hooks */
+import useShoppingCart from '../hooks/useShoppingCart';
+/* Data Mock */
+import products from '../data/products';
 /* Styles */
-
-// Data Mock
-const products: Product[] = [
-  {
-    id: '1',
-    title: 'Coffee Mug - 001',
-    img: './coffee-mug.png'
-  },
-  {
-    id: '2',
-    title: 'Coffee Mug - 002',
-    img: './coffee-mug2.png'
-  }
-];
-
-interface ProductInCart extends Product {
-  count: number;
-}
+import '../styles/custom-styles.css';
 
 const ShoppingPage = () => {
-  const [ shoppingCart, setShoppingCart ] = useState<{ [key:string]: ProductInCart }>({});
-
-  const onProductCountChange = ({count, product}: {count:number , product:Product}) => {
-    setShoppingCart(( prevState ) => {
-
-      if (count === 0) {
-        const { [product.id]: toDelete, ...rest } = prevState;
-        console.log(toDelete);
-
-        return { ...rest }
-      }
-
-      return {
-        ...prevState,
-        [product.id]: {...product, count}
-      }
-    });
-  };
+  const { shoppingCart, onProductCountChange } = useShoppingCart();
 
   return (
     <div>
@@ -69,8 +37,9 @@ const ShoppingPage = () => {
 
         {/* Add Components with imports */}
         {
-          products.map((product) => (
+          products.map((product, index) => (
             <ProductCard
+              key={`${product.title}_${index}`}
               product={ product }
               className='bg-dark text-white'
               onChange={onProductCountChange}

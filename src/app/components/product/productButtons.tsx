@@ -7,11 +7,12 @@ import styles from '../../styles/styles.module.css';
 import '../../styles/custom-styles.css';
 
 interface Props {
-  className?: string
-  style?: CSSProperties
+  className?: string;
+  style?: CSSProperties;
+  isMaxCounter?: boolean;
 }
 
-export const ProductButtons = ({ className, style }: Props) => {
+export const ProductButtons = ({ className, style, isMaxCounter }: Props) => {
     const { counter, increaseBy } = useContext( ProductContext );
   
     return (
@@ -27,8 +28,9 @@ export const ProductButtons = ({ className, style }: Props) => {
         </button>
         <div className={styles.countLabel}> {counter} </div>
         <button
-          className={styles.buttonAdd}
+          className={`${styles.buttonAdd} ${isMaxCounter && styles.disable}`}
           onClick={() => increaseBy(+1)}
+          disabled={isMaxCounter}
         >
           +
         </button>

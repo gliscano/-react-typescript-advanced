@@ -1,7 +1,7 @@
 /* React */
 import { useState } from "react";
 /* Interfaces */
-import { onChangeArgs, Product } from "../interfaces";
+import { OnChangeArgs, Product } from "../interfaces";
 
 
 interface ProductInCart extends Product {
@@ -11,7 +11,7 @@ interface ProductInCart extends Product {
 const useShoppingCart = () => {
   const [ shoppingCart, setShoppingCart ] = useState<{ [key:string]: ProductInCart }>({});
 
-  const onProductCountChange = ({count, product}: onChangeArgs) => {
+  const onProductCountChange = ({count, product}: OnChangeArgs) => {
 
     setShoppingCart(( prevState ) => {
     // Delete product without count
